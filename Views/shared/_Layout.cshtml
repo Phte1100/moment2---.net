@@ -1,0 +1,46 @@
+<html lang="sv">
+<head>
+	<meta charset="UTF-8">
+	<meta content="width=device-width, initial-scale=0.5" name="viewport">
+	<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;900&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+	<link href="style.css" rel="stylesheet">
+	<title>@ViewData["Title"]</title>
+</head>
+<body>
+	<header>
+		<section class="top-nav">
+			<a href="index.html" style="text-decoration: none; color: inherit;">
+			<h1>FiskeLog</h1></a> <input id="menu-toggle" type="checkbox">
+			 <label class='menu-button-container' for="menu-toggle"><span class='menu-button'></span></label>
+			<ul class="menu">
+				<li>
+					<a href="about.html">Vår story</a>
+				</li>
+				<li>
+					<a href="services.html">Våra tjänster</a>
+				</li>
+				<li>
+					<a href="contact.html">Kontakta oss</a>
+				</li>
+			</ul>
+		</section>
+	</header>
+	<div class="content-row">
+		<div class="text">
+            @RenderBody()
+		</div>
+	<footer>
+		<a href="index.html">
+			<h1>Fiskeplaneraren</h1>
+        </a>
+		<ul>
+			<li>info@fiskelog.se</li>
+			<li>060-123 45 67</li>
+			<li>Hittipågatan 25<br>
+			123 45 Sundsvall<br>
+			Sverige</li>
+		</ul>
+	</footer>
+</body>
+</html>
