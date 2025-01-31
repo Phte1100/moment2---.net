@@ -1,1 +1,35 @@
+@model Moment2Mvc.Models.FishModel
+
 <h2>Startsida</h2>
+
+<form method="post">
+    <label asp-for="Species">Fiskesort:</label>
+    <input asp-for="Species" />
+    <span asp-validation-for="Species"></span>
+    
+    <label asp-for="Location">Plats:</label>
+    <input asp-for="Location" />
+    <span asp-validation-for="Location"></span>
+    
+    <label asp-for="Weight">Vikt (gram):</label>
+    <input asp-for="Weight" type="number" />
+    <span asp-validation-for="Weight"></span>
+    
+    <label asp-for="Length">Längd (cm):</label>
+    <input asp-for="Length" type="number" />
+    <span asp-validation-for="Length"></span>
+    
+    <label asp-for="Date">Datum:</label>
+    <input asp-for="Date" type="date" />
+    <span asp-validation-for="Date"></span>
+    
+    <label asp-for="Description">Beskrivning:</label>
+    <textarea asp-for="Description"></textarea>
+    <span asp-validation-for="Description"></span>
+    
+    <button type="submit">Spara</button>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

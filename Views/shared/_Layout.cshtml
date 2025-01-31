@@ -1,27 +1,28 @@
+<!DOCTYPE html>
 <html lang="sv">
 <head>
 	<meta charset="UTF-8">
 	<meta content="width=device-width, initial-scale=0.5" name="viewport">
 	<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;900&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
-	<link href="style.css" rel="stylesheet">
+	<link href="~/css/main.css" rel="stylesheet">
 	<title>@ViewData["Title"]</title>
 </head>
 <body>
 	<header>
 		<section class="top-nav">
-			<a href="index.html" style="text-decoration: none; color: inherit;">
+			<a asp-asp-controller="Home" asp-action="Index" style="text-decoration: none; color: inherit;">
 			<h1>FiskeLog</h1></a> <input id="menu-toggle" type="checkbox">
 			 <label class='menu-button-container' for="menu-toggle"><span class='menu-button'></span></label>
 			<ul class="menu">
 				<li>
-					<a href="about.html">Vår story</a>
+					<a asp-asp-controller="Home" asp-action="Index">Hem</a>
 				</li>
 				<li>
-					<a href="services.html">Våra tjänster</a>
+					<a asp-asp-controller="Home" asp-action="log">Logga fiskar</a>
 				</li>
 				<li>
-					<a href="contact.html">Kontakta oss</a>
+					<a asp-asp-controller="Home" asp-action="About">About</a>
 				</li>
 			</ul>
 		</section>
@@ -29,6 +30,7 @@
 	<div class="content-row">
 		<div class="text">
             @RenderBody()
+			@RenderSection("Scripts", required: false)
 		</div>
 	<footer>
 		<a href="index.html">
