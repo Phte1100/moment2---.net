@@ -6,37 +6,53 @@ namespace Moment2Mvc.Controllers;
 
 public class HomeController : Controller
 {
+    private readonly string _filePath = "fiskar.json"; // Filen där fiskarna sparas
+
     public IActionResult Index()
     {
         return View();
     }
 
-    [HttpPost] 
-    public IActionResult Index(FishModel Model) {
+    [HttpPost]
+    public IActionResult Index(FishModel model)
+    {
+        if (ModelState.IsValid)
+        {
+            List<FishModel> fishList = new(); // Skapa en ny lista
+
+            // Kontrollera om filen existerar
+            if (System.IO.File.Exists(_filePath))
+            {
+                string jsonStr = System.IO.File.ReadAllText(_filePath);
+
+                // Deserialisera JSON-filen och skapa en tom lista om den är null
+                fishList = JsonSerializer.Deserialize<List<FishModel>>(jsonStr) ?? new List<FishModel>();
+            }
+
+            // Lägg till den nya fisken i listan
+            fishList.Add(model);
+
+            // Serialisera listan tillbaka till JSON-filen
+            string newJsonStr = JsonSerializer.Serialize(fishList, new JsonSerializerOptions { WriteIndented = true });
+            System.IO.File.WriteAllText(_filePath, newJsonStr);
+
+            ModelState.Clear(); // Rensa formuläret
+        }
         return View();
     }
 
     [HttpGet("/log")]
-    public IActionResult Log(FishModel model)
+    public IActionResult Log()
     {
-        //Validera input
-        if(ModelState.IsValid) 
-        {
-            // Läsa in json-fil
-            string jsonStr = System.IO.File.ReadAllText("fiskar.json");
-            // deserialisera json-fil
-            var fishList = JsonSerializer.Deserialize<List<FishModel>>(jsonStr);
+        List<FishModel> fishList = new();
 
-            // Lägg till ny fisk
-            if (fishList != null) 
-            {
-                fishList.Add(model);
-                // Serialisera listan
-                jsonStr = JsonSerializer.Serialize(fishList);
-                System.IO.File.WriteAllText("fiskar.json", jsonStr);
-            }
+        if (System.IO.File.Exists(_filePath))
+        {
+            string jsonStr = System.IO.File.ReadAllText(_filePath);
+            fishList = JsonSerializer.Deserialize<List<FishModel>>(jsonStr) ?? new List<FishModel>();
         }
-        return View();
+
+        return View(fishList);
     }
 
     [HttpGet("/omsidan")]
@@ -44,6 +60,4 @@ public class HomeController : Controller
     {
         return View();
     }
-    
-
 }
