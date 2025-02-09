@@ -1,9 +1,13 @@
 @model List<Moment2Mvc.Models.FishModel>
 @{
+    // Sätter sidans titel som visas i _TitelPartial
     ViewData["PageTitle"] = "Fångade fiskar";
 }
+
+<!-- titelpartialen som visar sidans titel -->
 <partial name="_TitelPartial" />
 
+<!-- Loopar igenom listan av fångade fiskar och använder en partial view för varje -->
 @foreach (var fish in Model)
 {
     <partial name="_FishPartial" model="fish" />

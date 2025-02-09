@@ -2,9 +2,12 @@
 
 <h2>Startsida</h2>
 
+<!-- Välkomstmeddelande från ViewBag -->
 <h3>@ViewBag.WelcomeMessage</h3>
+<!-- Informationsmeddelande från ViewData -->
 <p style="text-align: center;">@ViewData["InfoText"]</p>
 
+<!-- Visar ett bekräftelsemeddelande om en fångst har sparats -->
 @if (TempData["SuccessMessage"] != null)
 {
     <div id="successMessage" class="alert alert-success">
@@ -56,6 +59,7 @@
     <input type="submit" class="inputBtn" value="Spara" />
 </form>
 
+<!-- Inkluderar valideringsskript -->
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
 }
