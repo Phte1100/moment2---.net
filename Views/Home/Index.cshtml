@@ -2,6 +2,9 @@
 
 <h2>Startsida</h2>
 
+<h3>@ViewBag.WelcomeMessage</h3>
+<p style="text-align: center;">@ViewData["InfoText"]</p>
+
 @if (TempData["SuccessMessage"] != null)
 {
     <div id="successMessage" class="alert alert-success">
