@@ -2,6 +2,19 @@
 
 <h2>Startsida</h2>
 
+@if (TempData["SuccessMessage"] != null)
+{
+    <div id="successMessage" class="alert alert-success">
+        @TempData["SuccessMessage"]
+    </div>
+
+    <script>
+        setTimeout(function () {
+            document.getElementById("successMessage").style.display = "none";
+        }, 3000); // Meddelandet försvinner efter 3 sekunder
+    </script>
+}
+
 <form method="post">
     <label asp-for="Species">Fiskesort:</label>
     <input asp-for="Species" />
@@ -26,7 +39,17 @@
     <label asp-for="Description">Beskrivning:</label>
     <textarea asp-for="Description"></textarea>
     <span asp-validation-for="Description"></span>
+
+    <label>Släppt tillbaka?</label><br>
+    <input type="radio" asp-for="Released" value="Ja" id="releasedYes" />
+    <label for="releasedYes">Ja</label>
     
+    <input type="radio" asp-for="Released" value="Nej" id="releasedNo" />
+    <label for="releasedNo">Nej</label>
+
+    <span asp-validation-for="Released"></span>
+    
+    <br>
     <input type="submit" class="inputBtn" value="Spara" />
 </form>
 

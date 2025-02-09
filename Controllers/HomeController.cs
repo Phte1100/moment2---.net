@@ -14,32 +14,36 @@ public class HomeController : Controller
     }
 
     [HttpPost]
-    public IActionResult Index(FishModel model)
+public IActionResult Index(FishModel model)
+{
+    if (ModelState.IsValid)
     {
-        if (ModelState.IsValid)
+        List<FishModel> fishList = new();
+
+        if (System.IO.File.Exists(_filePath))
         {
-            List<FishModel> fishList = new(); // Skapa en ny lista
+            string jsonStr = System.IO.File.ReadAllText(_filePath);
 
-            // Kontrollera om filen existerar
-            if (System.IO.File.Exists(_filePath))
+            if (!string.IsNullOrWhiteSpace(jsonStr))
             {
-                string jsonStr = System.IO.File.ReadAllText(_filePath);
-
-                // Deserialisera JSON-filen och skapa en tom lista om den är null
                 fishList = JsonSerializer.Deserialize<List<FishModel>>(jsonStr) ?? new List<FishModel>();
             }
-
-            // Lägg till den nya fisken i listan
-            fishList.Add(model);
-
-            // Serialisera listan tillbaka till JSON-filen
-            string newJsonStr = JsonSerializer.Serialize(fishList, new JsonSerializerOptions { WriteIndented = true });
-            System.IO.File.WriteAllText(_filePath, newJsonStr);
-
-            ModelState.Clear(); // Rensa formuläret
         }
-        return View();
+
+        fishList.Add(model);
+
+        string newJsonStr = JsonSerializer.Serialize(fishList, new JsonSerializerOptions { WriteIndented = true });
+        System.IO.File.WriteAllText(_filePath, newJsonStr);
+
+        TempData["SuccessMessage"] = "Fångsten har sparats!";
+
+        return RedirectToAction("Index");
     }
+
+    return View();
+}
+
+
 
     [HttpGet("/log")]
     public IActionResult Log()

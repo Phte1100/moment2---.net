@@ -3,16 +3,54 @@
     "Species": "G\u00F6s",
     "Location": "\u00C4lven",
     "Weight": 3,
-    "Length": 1,
-    "Date": "2025-01-31T00:00:00",
-    "Description": "efsadf"
+    "Length": 5,
+    "Date": "2025-02-09T00:00:00",
+    "Description": "dawsdfasfasf",
+    "Released": "Ja"
   },
   {
     "Species": "Abborre",
     "Location": "HAvet",
-    "Weight": 1000,
-    "Length": 47,
-    "Date": "2025-02-07T00:00:00",
-    "Description": "ergsdfagzfgadhg"
+    "Weight": 3,
+    "Length": 3,
+    "Date": "2025-02-15T00:00:00",
+    "Description": "qwdqwdq",
+    "Released": "Nej"
+  },
+  {
+    "Species": "qwdqwdqw",
+    "Location": "fwedfsd",
+    "Weight": 21312,
+    "Length": 123,
+    "Date": "2025-02-09T00:00:00",
+    "Description": "21WEQD",
+    "Released": "Ja"
+  },
+  {
+    "Species": "Abborre",
+    "Location": "Indals\u00E4lven",
+    "Weight": 7,
+    "Length": 4,
+    "Date": "2025-02-09T00:00:00",
+    "Description": "gerfgdfgd",
+    "Released": "Ja"
+  },
+  {
+    "Species": "G\u00E4dda",
+    "Location": "asfasfa",
+    "Weight": 3,
+    "Length": 1,
+    "Date": "2025-02-09T00:00:00",
+    "Description": "asfada",
+    "Released": "Ja"
+  },
+  {
+    "Species": "G\u00F6s",
+    "Location": "ewrwrf",
+    "Weight": 4,
+    "Length": 3,
+    "Date": "2025-02-09T00:00:00",
+    "Description": "fdsfsdfsfsdfs",
+    "Released": "Ja"
   }
 ]

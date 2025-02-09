@@ -1,1 +1,18 @@
-<h2>Om sidan</h2>
+@{
+    ViewData["PageTitle"] = "Om sidan";
+}
+<partial name="_TitelPartial" />
+
+<div class="about">
+<p>
+    Denna applikationen låter användare registrera sina fiskefångster. Med formulärer fyller man i information om art, plats, vikt, längd, datum och en kort beskrivning. Det går även att ange om fisken släpptes tillbaka. När fångsten sparas visas en bekräftelse innan informationen lagras i en JSON-fil.
+</p>
+<br>
+<p>
+    Användaren kan också se en lista över tidigare fångster, hämtade från JSON-filen. Applikationen har inbyggd validering som säkerställer att all information fylls i korrekt. Sidans design är baserad på en äldre statisk sida.
+</p>
+<br>
+<p>
+    Applikationen är byggd med ASP.NET Core MVC och följer MVC-arkitekturen. Modeller hanterar datan och validering, vyer visar informationen och controllers sköter logiken för att spara och hämta data.
+</p>
+</div>

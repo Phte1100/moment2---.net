@@ -1,9 +1,10 @@
 @model List<Moment2Mvc.Models.FishModel>
-<h2>Fångade fiskar</h2>
+@{
+    ViewData["PageTitle"] = "Fångade fiskar";
+}
+<partial name="_TitelPartial" />
 
-<div class="fish">
 @foreach (var fish in Model)
 {
     <partial name="_FishPartial" model="fish" />
 }
-</div>
