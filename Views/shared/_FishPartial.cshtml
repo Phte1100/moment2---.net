@@ -1,0 +1,10 @@
+@model Moment2Mvc.Models.FishModel
+    <div class="service-item1">
+    <h3>@Model.Species</h3>
+    <p><strong>Plats:</strong> @Model.Location</p>
+    <p><strong>Vikt:</strong> @Model.Weight gram</p>
+    <p><strong>Längd:</strong> @Model.Length cm</p>
+    <p><strong>Datum:</strong> @Model.Date.ToString("yyyy-MM-dd")</p>
+    <p><strong>Beskrivning:</strong> @Model.Description</p>
+    </div>
+

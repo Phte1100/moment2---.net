@@ -1,1 +1,9 @@
-<h2>Planering inför fisketur</h2>
+@model List<Moment2Mvc.Models.FishModel>
+<h2>Fångade fiskar</h2>
+
+<div class="fish">
+@foreach (var fish in Model)
+{
+    <partial name="_FishPartial" model="fish" />
+}
+</div>

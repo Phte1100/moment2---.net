@@ -25,7 +25,9 @@ h2 {
 	font-size: 200%;
 }
 h3 {
-	margin-top: 3%;
+	margin-top: 1%;
+	text-align: center;
+	font-size: 200%;
 }
 p, ul {
 	font-family: 'Open Sans';
@@ -173,26 +175,6 @@ label {
 	margin: auto;
 	justify-content: center;
 }
-.text3 {
-	width: 100%;
-	margin-left: 25%;
-	margin-right: 25%;
-}
-.div3 {
-	width: 50%;
-	height: auto;
-	float: right;
-}
-.div3 img {
-	max-width: 100%;
-	height: auto;
-}
-.content-row {
-	margin: auto;
-	max-width: 1280px;
-	flex-direction: column;
-}
-
 .field-validation-error {
 	font-family: 'Open Sans', sans-serif;
 }
@@ -206,10 +188,7 @@ label {
 .intro h2 {
 	padding-bottom: 5%;
 }
-.social-icons a:hover img {
-	opacity: 0.7;
-	/* Opacitet pÃ¥ bilden nÃ¤r man hovrar Ã¶ver den */
-}
+
 .inputBtn {
 	border: none;
 	color: white;
@@ -233,48 +212,28 @@ label {
 .intro {
 	width: 100%;
 }
+
+.fish {
+	width: 1200px;
+	margin: auto;
+	flex-direction: wrap;
+	justify-content: center;	
+}
+
 .service-item1 {
 	width: auto;
 	margin-left: 25%;
 	margin-right: 25%;
+	padding: 3%;
 	background: #0B3D02;
 	color: white;
 	border-radius: 30px;
 	display: flex;
+	flex-direction: column;
 	justify-content: center;
-}
-.service-item1 h2 {
-	font-size: 230%;
-	padding-bottom: 5%;
-}
-.service-item1 img {
-	width: 50%;
-	border-top-right-radius: 30px;
-	border-bottom-right-radius: 30px;
-	object-fit: cover;
-}
-.service-item2 {
 	margin-top: 2%;
-	margin-bottom: 2%;
-	width: auto;
-	margin-left: 25%;
-	margin-right: 25%;
-	background: #0077BE;
-	color: white;
-	border-radius: 30px;
-	display: flex;
-	justify-content: center;
 }
-.service-item2 h2 {
-	font-size: 230%;
-	padding-bottom: 5%;
-}
-.service-item2 img {
-	width: 50%;
-	border-top-left-radius: 30px;
-	border-bottom-left-radius: 30px;
-	object-fit: cover;
-}
+
 .gradient-line {
 	height: 10px;
 	background: linear-gradient(to right, #0B3D02, #0077BE);
